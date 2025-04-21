@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Carousel, CarouselItem } from 'view-ui-plus';
 import { ref } from 'vue';
 
 const value = ref(0)
@@ -7,9 +6,11 @@ const value = ref(0)
 
 <template>
     <div>
-        <Carousel autoplay v-model="value" loop>
+        <Carousel class="portfolio" v-model="value" loop>
             <CarouselItem>
-                <div class="portfolio__item">1</div>
+                <div class="portfolio__item">
+                    <a href="https://trying-c.github.io/i-website/">I-WEBSITE</a>
+                </div>
             </CarouselItem>
             <CarouselItem>
                 <div class="portfolio__item">2</div>
@@ -24,9 +25,18 @@ const value = ref(0)
     </div>
 </template>
 
-<style lang="less" scoped>
-.portfolio__item {
-    background: #000;
-    height: 100%;
+<style lang="scss" scoped>
+.portfolio {
+
+    &__item {
+        background: #848dd84b;
+        border-radius: 20px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: calc(100vh - 100px);
+    }
 }
 </style>
