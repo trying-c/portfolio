@@ -1,0 +1,20 @@
+@mixin responseDevice($device) {
+  @if $device == "phone" {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $device == "pad" {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  } @else {
+    @media (min-width: 1025px) {
+      @content;
+    }
+  }
+}
+
+@mixin flex($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+}
