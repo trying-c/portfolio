@@ -1,6 +1,6 @@
 <script setup lang="ts">
 function showAlert() {
-    alert('about')
+    alert('关于')
 }
 </script>
 
