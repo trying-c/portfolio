@@ -1,0 +1,36 @@
+name: Build and Deploy
+on: [push]
+
+permissions:
+  contents: read
+  id-token: write
+  pages: write
+
+# 允许一个并发的部署
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      # - name: Install dependencies
+      #   run: npm install
+
+      # - name: Build the project
+      #   run: npm run build
+
+      - name: Install and Build 🔧
+        run: |
+          npm install   
+          npm run build
+
+      - name: Deploy 🚀 # 第三步：部署
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist # 部署的目录
+          branch: gh-pages # 部署到哪个分支
