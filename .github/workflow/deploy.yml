@@ -2,29 +2,16 @@ name: Build and Deploy
 on: [push]
 
 permissions:
-  contents: read
-  id-token: write
-  pages: write
-
-# 允许一个并发的部署
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
+  contents: write
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout 🛎️ # 第一步：检出代码
         uses: actions/checkout@v4
 
-      # - name: Install dependencies
-      #   run: npm install
-
-      # - name: Build the project
-      #   run: npm run build
-
-      - name: Install and Build 🔧
+      - name: Install and Build 🔧 # 第二步：安装依赖和构建项目
         run: |
           npm install   
           npm run build
