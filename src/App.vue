@@ -6,7 +6,7 @@ import { themeOverrides, darkThemeOverrides } from './assets/styles/theme'
 import { darkTheme, lightTheme, type GlobalTheme } from 'naive-ui';
 import { computed, onBeforeMount, ref, type Ref } from 'vue';
 
-const title: Ref = ref<String>('Trying Page')
+const title: Ref = ref<String>("Trying's Pages")
 
 const main: Ref = ref<HTMLElement | null>(null)
 

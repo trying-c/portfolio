@@ -6,7 +6,7 @@
     <n-flex class="home__container" justify="space-between" algin="center" :wrap="false">
         <div class="home__left">
             <n-gradient-text>
-                <h1>Hello, 欢迎来到Trying Page!</h1>
+                <h1>Hello, Welcome to my pages!</h1>
             </n-gradient-text>
             <div style="margin-top: 3rem;">
                 <p>我是Trying, 前端开发工程师, 专注前端实践与性能优化 </p>
